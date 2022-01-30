@@ -2,6 +2,7 @@ from cgitb import text
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Post
+from django.http import HttpResponseRedirect
 
 def index(request):
     return render(request,'home.html', {'name':'Navalny'})
@@ -29,4 +30,5 @@ def send(request):
     p = Post(title=request.POST["title"],\
         msg = request.POST["msg"])
     p.save()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
     return render(request,'send.html')

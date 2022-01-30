@@ -4,6 +4,7 @@
 
 <form  action="send" method='post' class='reply'>
     {%csrf_token%}
+    <input type="hidden" name="next" value="{{ request.path }}">
     Title : <input type="text" name="title"<br>
     Post : <input type="text" name="msg"<br>
     <input type="submit">
