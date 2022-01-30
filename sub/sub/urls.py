@@ -17,9 +17,15 @@ from django.contrib import admin
 #from django.urls import path
 #from mainBoard import views
 from django.urls import path, include
+from django.conf import settings
+from django.urls import include, re_path
+from django.conf.urls.static import static
+from django.conf.urls.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('', views.index, name='index'),
     path('', include('mainBoard.urls'))
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

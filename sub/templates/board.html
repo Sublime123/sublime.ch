@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1> Sublimach</h1>
+
+<form  action="send" method='post' class='reply'>
+    {%csrf_token%}
+    Title : <input type="text" name="title"<br>
+    Post : <input type="text" name="msg"<br>
+    <input type="submit">
+</form>
+{% for i in messages %}
+    <div class="postblock">
+        {{ i }}
+    </div>
+{% endfor %}
+{% endblock %}
