@@ -1,5 +1,4 @@
 from cgitb import text
-from types import NoneType
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Post
@@ -38,11 +37,12 @@ def board(request):
 
 
 def send(request):
-    form = PostForm(request.POST)
+    form = PostForm(request.POST, request.FILES)
     if form.is_valid():
         post = form.save(commit=False)
         post.user = request.user if request.user.is_anonymous == False else None
         post.published_date = timezone.now()
+        post.pic = request.FILES.get('pic')
         post.save()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
     """

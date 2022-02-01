@@ -1,5 +1,4 @@
 from email.policy import default
-from types import NoneType
 from django.db import models
 #from django.contrib.auth.models import User
 from django.conf import settings
