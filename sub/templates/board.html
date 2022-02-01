@@ -15,13 +15,18 @@
             {{i.title}}
         </span>
         <span class="postername">
-            {{i.user}}
+            
+            {%if i.user %}
+                {{i.user}}
+            {%else%}
+                Anon
+            {% endif%}
         </span>
         <span class="number">
             {{i.number}}
         </span>
         <span>
-            {{i.published_date}}
+            {{i.published_date|date:"d/m/Y G:i:s"}}
         </span>
         <br>
         <div>
