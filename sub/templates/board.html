@@ -2,24 +2,29 @@
 {% block content %}
 <h1> Sublimach</h1>
 
-<h1>New post</h1>
 
-<form action="send" method="POST" class="post-form">{% csrf_token %}
+
+<form action="send" method="POST" class="reply">{% csrf_token %}
+    <h1>New post</h1>
     {{ form.as_p }}
     <button type="submit" class="save btn btn-default">Save</button>
 </form>
 {% for i in messages %}
     <div class="postblock">
-        <div>
+        <span class="title">
             {{i.title}}
-        </div>
-        <div>
+        </span>
+        <span class="postername">
             {{i.user}}
-        </div>
-        <div>
+        </span>
+        <span>
             {{i.published_date}}
-        </div>
+        </span>
+        <br>
         <div>
+           <img src="media/{{i.img}}">
+        </div>
+        <div class="post">
             {{ i.msg }}
         </div>
        

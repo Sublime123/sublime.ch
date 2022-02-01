@@ -7,8 +7,8 @@ from django.conf import settings
 
 class Post(models.Model):    
     number = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=256,null=True, blank=True)
-    msg = models.CharField(max_length=1000,null=True, blank=True)
+    title = models.CharField(max_length=256,default="",blank=True)
+    msg = models.CharField(max_length=1000,default="",blank=True)
     img = models.ImageField(upload_to='pics',null=True, blank=True)
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
