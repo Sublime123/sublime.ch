@@ -31,7 +31,8 @@
         <br>
         <div>
             {%if i.img %}
-                <img src="media/{{i.img}}">
+            {% load thumbnail %}
+                <img src="{{ i.img|thumbnail_url:'avatar' }}" alt="" />
             {% endif%}
         </div>
         <div class="post">

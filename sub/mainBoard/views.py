@@ -24,7 +24,7 @@ def board(request):
     listOfAll = list(Post.objects.order_by('-number'))
     screen = request.GET.get("screen", 0)
     messages = getMessagesForScreen(listOfAll,screen,posts_per_screen)
-    #print(messages)
+    
     return render(request, 'board.html', {'form': form,'messages':messages})
     """
     posts = []
