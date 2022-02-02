@@ -35,7 +35,6 @@ def board(request):
     return render(request, 'board.html', data)
 """
 
-#
 def send(request):
     form = PostForm(request.POST, request.FILES)
     if form.is_valid():

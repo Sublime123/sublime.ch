@@ -1,0 +1,1 @@
+$('[data-fullPic]').click( function (){$(this).src=$(this).data('fullPic')})
