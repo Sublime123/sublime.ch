@@ -10,7 +10,7 @@
     <button type="submit" class="save btn btn-default">Post</button>
 </form>
 {% for i in messages %}
-    <div class="postblock">
+    <div class="postblock" id="{{i.number}}">
         <span class="title">
             {{i.title}}
         </span>
@@ -21,12 +21,12 @@
             {%else%}
                 Anon
             {% endif%}
-        </span>
-        <span class="number">
-            {{i.number}}
-        </span>
+        </span>        
         <span class="postDate">
             {{i.published_date|date:"d/m/Y G:i:s"}}
+        </span>
+        <span class="number">
+            <a href="#{{i.number}}"> &gt;&gt;{{i.number}}</a>
         </span>
         <br>
         <div>
