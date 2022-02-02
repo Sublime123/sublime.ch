@@ -115,13 +115,7 @@ font-family:serif;
 color:#0F0C5D;
 font-weight:800;
 }
-.postername {
-background:inherit;
-font-size:12px;
-font-family:serif;
-color:#117743;
-font-weight:800;
-}
+
 .oldpost {
    background:inherit;
    font-size:18px;
@@ -168,17 +162,45 @@ color:#000000;
 }
 
 /* Changes */
+
 .postblock {
    margin: 5px;
    padding: 5px;
+   background: #bdb5e9;
+   font-weight: 600;
 }
-.title {
-   color:#0F8FE1;
-   font-size: larger;
-}
+
 .post {
    padding-left: 5px;
 }
 .number {
    color: #9AD2F6;
+}
+.reply {
+   padding:15px;
+}
+/* Final */
+
+.title {
+   color:#771145;
+   font-size: larger;
+}
+
+.postername {
+   background:inherit;
+   font-family:serif;
+   color:#117743;
+   font-weight:800;
+   }
+.number {
+   background:inherit;
+   font-family:serif;
+   color:#117776;
+   font-weight:800;
+}
+.postDate{
+   background:inherit;
+   font-family:serif;
+   color:#127711;
+   font-weight:800;
 }

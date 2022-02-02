@@ -1,13 +1,13 @@
 {% extends 'base.html'%}
 {% block content %}
-<h1> Sublimach</h1>
+<h2> Sublimach</h2>
 
 
 
 <form action="send" method="POST" class="reply" enctype="multipart/form-data">{% csrf_token %}
-    <h1>New post</h1>
+    <h4>New post</h4>
     {{ form.as_p }}
-    <button type="submit" class="save btn btn-default">Save</button>
+    <button type="submit" class="save btn btn-default">Post</button>
 </form>
 {% for i in messages %}
     <div class="postblock">
@@ -25,7 +25,7 @@
         <span class="number">
             {{i.number}}
         </span>
-        <span>
+        <span class="postDate">
             {{i.published_date|date:"d/m/Y G:i:s"}}
         </span>
         <br>
