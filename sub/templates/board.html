@@ -32,6 +32,7 @@
         <div>
             {%if i.img %}
             {% load thumbnail %}
+                <div class="imgName"><a href="media/{{i.img}}">{{i.img.name}}</a></div>
                 <img src="{{ i.img|thumbnail_url:'avatar' }}" alt="" data-alternative="media/{{i.img}}" />
             {% endif%}
         </div>
