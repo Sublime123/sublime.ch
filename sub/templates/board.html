@@ -32,7 +32,7 @@
         <div>
             {%if i.img %}
             {% load thumbnail %}
-                <img src="{{ i.img|thumbnail_url:'avatar' }}" alt="" data-fullPic="media/{{i.img}}" />
+                <img src="{{ i.img|thumbnail_url:'avatar' }}" alt="" data-alternative="media/{{i.img}}" />
             {% endif%}
         </div>
         <div class="post">
