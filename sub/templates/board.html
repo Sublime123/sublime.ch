@@ -1,45 +1,7 @@
 {% extends 'base.html'%}
 {% block content %}
 <h2> Sublimach</h2>
-
-
-
-<form action="send" method="POST" class="reply" enctype="multipart/form-data">{% csrf_token %}
-    <h4>New post</h4>
-    {{ form.as_p }}
-    <button type="submit" class="save btn btn-default">Post</button>
-</form>
-{% for i in messages %}
-    <div class="postblock" id="{{i.number}}">
-        <span class="title">
-            {{i.title}}
-        </span>
-        <span class="postername">
-            
-            {%if i.user %}
-                {{i.user}}
-            {%else%}
-                Anon
-            {% endif%}
-        </span>        
-        <span class="postDate">
-            {{i.published_date|date:"d/m/Y G:i:s"}}
-        </span>
-        <span class="number">
-            <a href="#{{i.number}}"> &gt;&gt;{{i.number}}</a>
-        </span>
-        <br>
-        <div>
-            {%if i.img %}
-            {% load thumbnail %}
-                <div class="imgName"><a href="media/{{i.img}}">{{i.img.name}}</a></div>
-                <img src="{{ i.img|thumbnail_url:'avatar' }}" alt="" data-alternative="media/{{i.img}}" />
-            {% endif%}
-        </div>
-        <div class="post">
-            {{ i.msg }}
-        </div>
-       
-    </div>
+{% for i in threads %}
+{% include 'post.html' with oppost=i.op posts=i.posts%}
 {% endfor %}
 {% endblock %}

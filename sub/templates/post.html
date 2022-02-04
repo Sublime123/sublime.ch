@@ -1,0 +1,65 @@
+<div class="postblock opPostblock" id="{{i.number}}">
+    <span class="title">
+        {{oppost.title}}
+    </span>
+    <span class="postername">
+        
+        {%if oppost.user %}
+            {{oppost.user}}
+        {%else%}
+            Anon
+        {% endif%}
+    </span>        
+    <span class="postDate">
+        {{opposti.published_date|date:"d/m/Y G:i:s"}}
+    </span>
+    <span class="number">
+        <a href="#{{oppost.number}}"> &gt;&gt;{{oppost.number}}</a>
+    </span>
+    <br>
+    <div>
+        {%if oppost.img %}
+        {% load thumbnail %}
+            <div class="imgName"><a href="media/{{oppost.img}}">{{oppost.img.name}}</a></div>
+            <img src="{{ oppost.img|thumbnail_url:'avatar' }}" alt="" data-alternative="media/{{oppost.img}}" />
+        {% endif%}
+    </div>
+    <div class="post">
+        {{ oppost.msg }}
+    </div>
+   
+</div>
+
+{% for i in posts %}
+    <div class="postblock" id="{{i.number}}">
+        <span class="title">
+            {{i.title}}
+        </span>
+        <span class="postername">
+            
+            {%if i.user %}
+                {{i.user}}
+            {%else%}
+                Anon
+            {% endif%}
+        </span>        
+        <span class="postDate">
+            {{i.published_date|date:"d/m/Y G:i:s"}}
+        </span>
+        <span class="number">
+            <a href="#{{i.number}}"> &gt;&gt;{{i.number}}</a>
+        </span>
+        <br>
+        <div>
+            {%if i.img %}
+            {% load thumbnail %}
+                <div class="imgName"><a href="media/{{i.img}}">{{i.img.name}}</a></div>
+                <img src="{{ i.img|thumbnail_url:'avatar' }}" alt="" data-alternative="media/{{i.img}}" />
+            {% endif%}
+        </div>
+        <div class="post">
+            {{ i.msg }}
+        </div>
+       
+    </div>
+{% endfor %}

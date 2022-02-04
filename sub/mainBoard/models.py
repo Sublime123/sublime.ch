@@ -6,6 +6,10 @@ from django.conf import settings
 def only_filename(instance, filename):
     return filename
 
+class Threads(models.Model):
+    threadNumber = models.AutoField(primary_key=True, default=1)
+    bump = models.IntegerField(default=0)
+
 class Post(models.Model):    
     number = models.AutoField(primary_key=True)
     title = models.CharField(max_length=256,default="",blank=True)
@@ -17,5 +21,13 @@ class Post(models.Model):
         null=True
     )
     published_date = models.DateTimeField(null=True, blank=True)
+    thread = models.ForeignKey(
+        Threads,
+        on_delete=models.CASCADE,
+        null=True
+    )
+    opPost = models.BooleanField(default=True)
     def __str__(self):
         return self.msg
+
+

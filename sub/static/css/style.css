@@ -163,12 +163,7 @@ color:#000000;
 
 /* Changes */
 
-.postblock {
-   margin: 5px;
-   padding: 5px;
-   background: #bdb5e9;
-   font-weight: 600;
-}
+
 
 .post {
    padding-left: 5px;
@@ -209,4 +204,15 @@ color:#000000;
    white-space: nowrap;
    overflow: hidden;
    text-overflow: ellipsis;
+}
+
+.postblock {
+   margin: 5px;
+   padding: 5px;
+   background: #bdb5e9;
+   font-weight: 600;
+}
+.opPostblock 
+{
+   background: #907cff;
 }

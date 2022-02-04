@@ -6,3 +6,8 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('title', 'msg', 'img')
+
+class ThreadForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ('title', 'msg', 'img')
