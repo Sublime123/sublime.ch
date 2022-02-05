@@ -1,6 +1,14 @@
 {% extends 'base.html'%}
 {% block content %}
 <h2> Sublimach</h2>
+
+<form method='POST' class='reply' enctype="multipart/form-data">
+    <h4>New thread</h4>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="save btn btn-default">New Thread</button>
+</form>
+
 {% for i in threads %}
 {% include 'post.html' with oppost=i.op posts=i.posts%}
 {% endfor %}
