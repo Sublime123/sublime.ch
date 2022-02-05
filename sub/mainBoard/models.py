@@ -7,7 +7,7 @@ def only_filename(instance, filename):
     return filename
 
 class Threads(models.Model):
-    threadNumber = models.AutoField(primary_key=True, default=1)
+    threadNumber = models.AutoField(primary_key=True)
     bump = models.IntegerField(default=0)
 
 class Post(models.Model):    

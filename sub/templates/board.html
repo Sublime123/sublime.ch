@@ -4,4 +4,13 @@
 {% for i in threads %}
 {% include 'post.html' with oppost=i.op posts=i.posts%}
 {% endfor %}
+<div>
+    {% for i in screens %}
+        {% if i.current%}
+            {{i.screen}}
+        {%else%}
+            <a href="?screen={{i.screen}}">{{i.screen}}</a>
+        {%endif%}
+    {% endfor %}
+</div>
 {% endblock %}
