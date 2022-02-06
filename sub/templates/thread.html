@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+{% block content %}
+<h4><a href="board">Back to board</a></h4>
+<form method='POST' class='reply' enctype="multipart/form-data">
+    <h4>New reply</h4>
+    {% csrf_token %}
+    <input type="hidden" name="threadId" value="{{threadId}}">
+    {{form.as_p}}
+    <button type="submit" class="save btn btn-default">New Reply</button>
+</form>
+{% include 'post.html' with oppost=oppost posts=posts%}
+{% endblock %}

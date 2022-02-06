@@ -10,8 +10,9 @@
 </form>
 
 {% for i in threads %}
-{% include 'post.html' with oppost=i.op posts=i.posts%}
+{% include 'post.html' with oppost=i.op op_link=i.op_link posts=i.posts%}
 {% endfor %}
+
 <div>
     {% for i in screens %}
         {% if i.current%}
