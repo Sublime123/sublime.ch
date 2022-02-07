@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainBoard',
-    'easy_thumbnails'
+    'easy_thumbnails',
+    'precise_bbcode'
 ]
 
 MIDDLEWARE = [

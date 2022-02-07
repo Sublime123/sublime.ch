@@ -26,7 +26,11 @@
         {% endif%}
     </div>
     <div class="post">
-        {{ oppost.msg }}
+        {% load bbcode_tags %}
+        {% bbcode entry.bbcode_content %}
+        {% autoescape off %}
+        {{ oppost.msg|bbcode }}
+        {% endautoescape %}
     </div>
    
 </div>
@@ -59,7 +63,11 @@
             {% endif%}
         </div>
         <div class="post">
-            {{ i.msg }}
+            {% load bbcode_tags %}
+        {% bbcode entry.bbcode_content %}
+        {% autoescape off %}
+        {{ i.msg|bbcode }}
+        {% endautoescape %}
         </div>
        
     </div>

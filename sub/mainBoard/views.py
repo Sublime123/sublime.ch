@@ -64,7 +64,7 @@ def board(request):
         """
         th = []
         threads = list(Threads.objects.order_by('-bump'))
-        posts_per_screen = 5
+        posts_per_screen = 10
         try:
             screen = int(request.GET.get("screen", 0))
         except:
